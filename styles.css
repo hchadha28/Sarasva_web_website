@@ -19,6 +19,7 @@ a {
 }
 
 /* Header Section */
+/* Header Section */
 .header {
     display: flex;
     justify-content: space-between;
@@ -26,6 +27,26 @@ a {
     padding: 1rem 2rem;
     background-color: #007C41; /* Forest Green */
     color: #fff;
+}
+
+.header-left {
+    display: flex; /* Ensure logo and text are side-by-side */
+    align-items: center; /* Align logo and text vertically */
+    gap: 0.5rem; /* Add spacing between logo and text */
+}
+
+.logo {
+    width: 50px; /* Adjust size of the logo */
+    height: 50px; /* Ensure the height matches the width for a perfect circle */
+    border-radius: 50%; /* Makes the borders round */
+    margin-right: 1rem; /* Spacing between logo and text */
+    object-fit: cover; /* Ensures the image fits nicely inside the circular shape */
+}
+
+
+.header-text {
+    display: flex;
+    flex-direction: column; /* Stack the title and subtitle */
 }
 
 .header-left h1 {
@@ -56,7 +77,6 @@ a {
     color: #FFB81C; /* Gold */
 }
 
-/* Hero Section */
 /* Hero Section */
 .hero {
     position: relative; /* Allows positioning of ::before pseudo-element */
@@ -185,4 +205,56 @@ a {
         flex-direction: column;
         gap: 1.5rem;
     }
+}
+
+/* Hero Section Styles */
+.hero {
+    position: relative;
+    height: 400px; /* Fixed height for the hero section */
+    background: url('peaceful-forest-oasis-with-clear-stream-surrounded-by-lush-greenery-wallpaper-background-landscape-ai-generative-photo.jpeg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 10px; /* Rounded corners */
+    transition: transform 0.3s ease, background-size 0.3s ease; /* Smooth hover effects */
+}
+
+.hero:hover {
+    transform: scale(1.02); /* Slightly enlarge the section */
+    background-size: 110%; /* Zoom in the background image */
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better contrast */
+    z-index: 1;
+    transition: opacity 0.3s ease; /* Smooth overlay transition */
+}
+
+.hero:hover::before {
+    opacity: 0.4; /* Slightly reduce the overlay opacity on hover */
+}
+
+.hero-content {
+    position: relative; /* Keeps text above the overlay */
+    text-align: center;
+    color: white;
+    z-index: 2; /* Ensures content is above the background and overlay */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Adds shadow for readability */
+}
+
+.hero-title {
+    font-size: 3rem; /* Larger text for "Sarasva" */
+    margin: 0; /* Removes extra spacing */
+}
+
+.hero-subtitle {
+    font-size: 1.5rem; /* Smaller text for your name */
+    margin-top: 0.5rem; /* Adds spacing below the title */
 }

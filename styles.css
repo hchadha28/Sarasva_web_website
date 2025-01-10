@@ -211,7 +211,7 @@ a {
 .hero {
     position: relative;
     height: 400px; /* Fixed height for the hero section */
-    background: url('peaceful-forest-oasis-with-clear-stream-surrounded-by-lush-greenery-wallpaper-background-landscape-ai-generative-photo.jpeg') no-repeat center center/cover;
+    background: url('premium_photo-1698001750742-f3c18f63bcb8.avif') no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -234,11 +234,11 @@ a {
     height: 100%;
     background: rgba(0, 0, 0, 0.5); /* Dark overlay for better contrast */
     z-index: 1;
-    transition: opacity 0.3s ease; /* Smooth overlay transition */
+    transition: opacity 0.8s ease; /* Smooth overlay transition */
 }
 
 .hero:hover::before {
-    opacity: 0.4; /* Slightly reduce the overlay opacity on hover */
+    opacity: 0.3; /* Slightly reduce the overlay opacity on hover */
 }
 
 .hero-content {

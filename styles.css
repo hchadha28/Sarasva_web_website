@@ -1,37 +1,41 @@
 /* General Styles */
 body {
-    /*font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;*/
-    font-family:Menlo,Consolas,monaco,monospace;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 14px;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    background: #f9f9f9;
+    background-color: #f5f5f5;
     color: #333;
+    line-height: 1.6;
 }
 
 h1, h2, h3, p {
     margin: 0;
 }
-/*hi*/
-/* Header */
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header Section */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 1.5rem 2rem;
-    background: #fff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem 2rem;
+    background-color: #007C41; /* Forest Green */
+    color: #fff;
 }
 
-.logo-section h1 {
-    font-size: 1.7rem;
-    font-weight: 700;
-    color: #333;
+.header-left h1 {
+    font-size: 1.5rem;
+    color: #FFB81C; /* Gold */
 }
 
-.logo-section p {
-    font-size: 0.78rem;
-    color: #777;
+.header-left p {
+    font-size: 0.8rem;
+    color: #FFFFFF;
 }
 
 .navbar ul {
@@ -42,76 +46,92 @@ h1, h2, h3, p {
 }
 
 .navbar ul li a {
-    text-decoration: none;
-    font-size: 0.78rem;
-    font-weight: 500;
-    color: #007aff;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 0.8rem;
     transition: color 0.3s ease;
 }
 
 .navbar ul li a:hover {
-    color: #005bb5;
+    color: #FFB81C; /* Gold */
 }
 
 /* Hero Section */
+/* Hero Section */
 .hero {
+    position: relative; /* Allows positioning of ::before pseudo-element */
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 2rem;
-    background: #eef4ff;
-    border-radius: 15px;
+    align-items: center;
+    padding: 3rem 2rem;
     margin: 2rem auto;
-    max-width: 90%;
+    max-width: 1200px;
+    height: 400px; /* Define a fixed height for the hero section */
+    border: 1px solid #007C41; /* Forest Green */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.hero-text h2 {
-    font-size: 2.1rem;
-    font-weight: bold;
-    color: #222;
-    margin-bottom: 1rem;
-}
-
-.hero-text p {
-    font-size: 1rem;
-    color: #555;
-}
-
-.hero-image {
-    max-width: 40%;
     border-radius: 10px;
+    overflow: hidden; /* Ensures content stays within the border */
+    background-color: #FFFFFF; /* Fallback color */
 }
+
+.hero::before {
+    content: ''; /* Pseudo-element for background image */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('.sarasva3rdyr.jpg') no-repeat center center; /* Ensure the correct relative path */
+    background-size: cover; /* Scale image to cover the entire container */
+    opacity: 0.6; /* Set transparency level */
+    z-index: 1; /* Ensure it is behind the text content */
+}
+
+.hero-content {
+    position: relative; /* Allows layering above ::before */
+    z-index: 2; /* Ensure content is above the background */
+    max-width: 60%;
+    text-align: left;
+}
+
+.hero-content h2 {
+    font-size: 1.5rem;
+    color: #007C41; /* Forest Green */
+}
+
+.hero-content p {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    color: #333;
+}
+
 
 /* Blogs Section */
 .blogs {
-    padding: 1.7rem;
+    padding: 2rem;
+    background: #F5F5F5;
     text-align: center;
-    background: #fff;
-    margin: 2rem auto;
-    max-width: 90%;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .blogs h2 {
-    font-size: 1.7rem;
-    color: #333;
-    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    color: #007C41; /* Forest Green */
+    margin-bottom: 1rem;
 }
 
 .blog-container {
     display: flex;
-    justify-content: center;
-    gap: 1.5rem;
+    justify-content: space-evenly;
+    gap: 1rem;
     flex-wrap: wrap;
 }
 
 .blog-card {
-    background: #eef4ff;
-    padding: 1.5rem;
-    border-radius: 10px;
     max-width: 300px;
+    background: #FFFFFF;
+    padding: 1rem;
+    border: 1px solid #007C41; /* Forest Green */
+    border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
@@ -122,20 +142,47 @@ h1, h2, h3, p {
 
 .blog-card h3 {
     font-size: 1rem;
-    color: #007aff;
+    color: #FFB81C; /* Gold */
     margin-bottom: 0.5rem;
 }
 
 .blog-card p {
-    font-size: 0.78rem;
-    color: #555;
+    font-size: 0.8rem;
+    color: #333;
 }
 
-/* Footer */
-footer {
+/* Footer Section */
+.footer {
     text-align: center;
+    background: #007C41; /* Forest Green */
     padding: 1rem;
-    background: #222;
     color: #fff;
-    font-size: 0.67rem;
+}
+
+.footer-links a {
+    margin: 0 0.5rem;
+    font-size: 0.8rem;
+    color: #ddd;
+}
+
+.footer-links a:hover {
+    color: #FFB81C; /* Gold */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        padding: 2rem 1rem;
+    }
+
+    .hero-content {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .blog-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
 }
